@@ -80,6 +80,7 @@ class FGAgregarTarea : Fragment(R.layout.fg_agregar_tarea) {
             showTimePikerDialog()
         }
 
+
         var id=-1
         val bundle = Bundle()
         //id = arguments?.getString("id")!!.toInt()

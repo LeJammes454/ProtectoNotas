@@ -37,4 +37,6 @@ class ViewMultimediaFragment : Fragment() {
         return root.rootView
     }
 
+
+
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white"
+    android:background="@color/fondo"
     tools:context=".fragmentos.FGAgregarTarea">
 
     <ScrollView
@@ -24,6 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -33,7 +34,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/white"
                 android:elevation="8dp"
-                app:cardCornerRadius="5dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -147,63 +149,43 @@
         </LinearLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+    <LinearLayout
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/rediobac"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/multimediaTask"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-        app:layout_constraintVertical_bias="0.884"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/btnFotoT"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_toma_foto"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="50dp"
+            android:src="@drawable/ic_toma_foto" />
 
         <ImageView
             android:id="@+id/btnAudioT"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_mic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnVideoT"
-            app:layout_constraintStart_toEndOf="@+id/btnFotoT"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_mic" />
 
         <ImageView
             android:id="@+id/btnVideoT"
             android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_videocam"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.575"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="50dp"
+            android:src="@drawable/ic_videocam" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/multimediaTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/background_white"
-        app:fab_colorPressed="@color/btnPress"
-        app:fab_icon="@drawable/ic_attachment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-        app:layout_constraintVertical_bias="0.884" />
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

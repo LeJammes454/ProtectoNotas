@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bersyte.noteapp.R
 import com.bersyte.noteapp.db.NoteDatabase
 import com.bersyte.noteapp.model.Multimedia
@@ -84,6 +85,3 @@ class MultimediaAdapter (var multimedia: List<Multimedia>): RecyclerView.Adapter
     }
 
 }
-
-
-
