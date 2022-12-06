@@ -44,7 +44,11 @@ class MultimediaAdapter (var multimedia: List<Multimedia>): RecyclerView.Adapter
             holder.image.setImageResource(R.drawable.ic_photo_camera)
         } else if (m.type == "video") {
             holder.image.setImageResource(R.drawable.ic_videocam)
+        } else if (m.type == "audio") {
+            holder.image.setImageResource(R.drawable.ic_mic)
         }
+
+
 
         holder.card.setOnClickListener {
             val bundle = Bundle()
