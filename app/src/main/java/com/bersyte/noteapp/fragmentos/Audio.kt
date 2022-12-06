@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bersyte.noteapp.databinding.FragmentAudioBinding
 import com.bersyte.noteapp.db.NoteDatabase
@@ -27,6 +28,7 @@ class Audio : Fragment(){
     private var recorder: MediaRecorder? = null
     private var player: MediaPlayer? = null
     private lateinit var miContexto: Context
+    var audioguradado = false
 
     // Requesting permission to RECORD_AUDIO
     override fun onAttach(context: Context) {
@@ -41,13 +43,27 @@ class Audio : Fragment(){
         val binding = FragmentAudioBinding.inflate(layoutInflater)
 
         binding.btnStart.setOnClickListener {
+            Toast.makeText(context, "Grabando", Toast.LENGTH_LONG).show()
             revisarPermisos()
+            audioguradado=true
         }
 
         binding.btnStop.setOnClickListener {
-            stopRecording()
-            onPlay(mStartPlaying)
-            mStartPlaying = !mStartPlaying
+            if (audioguradado==false){
+                Toast.makeText(context, "Primero debes grabar un audio", Toast.LENGTH_LONG).show()
+            }else{
+                stopRecording()
+                Toast.makeText(context, "Grabacion Detenida", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+        binding.btnplay.setOnClickListener {
+            if (audioguradado==false){
+                Toast.makeText(context, "Primero debes grabar un audio", Toast.LENGTH_LONG).show()
+            }else{
+                onPlay(mStartPlaying)
+                mStartPlaying = !mStartPlaying
+            }
         }
 
        binding.btnGuardar.setOnClickListener{

@@ -41,9 +41,9 @@ class MultimediaAdapter (var multimedia: List<Multimedia>): RecyclerView.Adapter
         holder.description.text = m.description
 
         if (m.type == "photo") {
-            holder.image.setImageResource(R.drawable.foto)
+            holder.image.setImageResource(R.drawable.ic_photo_camera)
         } else if (m.type == "video") {
-            holder.image.setImageResource(R.drawable.camara)
+            holder.image.setImageResource(R.drawable.ic_videocam)
         }
 
         holder.card.setOnClickListener {

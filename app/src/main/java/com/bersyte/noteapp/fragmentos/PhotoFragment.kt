@@ -1,5 +1,6 @@
 package com.bersyte.noteapp.fragmentos
 
+import android.R
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -8,23 +9,23 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.bersyte.noteapp.R
+import androidx.fragment.app.Fragment
 import com.bersyte.noteapp.databinding.FragmentPhotoBinding
 import com.bersyte.noteapp.db.NoteDatabase
 import com.bersyte.noteapp.model.Multimedia
-import com.bersyte.noteapp.model.Tarea
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class PhotoFragment : Fragment() {
     private lateinit var binding: FragmentPhotoBinding
@@ -35,34 +36,49 @@ class PhotoFragment : Fragment() {
         super.onAttach(context)
         miContext = context
     }
-
+    var fotocap = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPhotoBinding.inflate(layoutInflater)
 
+
         binding.takePhoto.setOnClickListener {
             validarPermisos()
+            fotocap= true
+        }
+
+        binding.addfoto.setOnClickListener {
+            Toast.makeText(context, "Trabajando en adjuntar foto" +
+                    "", Toast.LENGTH_SHORT).show()
         }
 
         binding.savePhoto.setOnClickListener {
-            val file = Multimedia (
-                arguments?.getString("id")!!.toInt(),
-                "photo",
-                photoURI.toString(),
-                binding.description.text.toString()
-            )
-            //Insert
-            NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().insert(file)
+            if (fotocap!=false){
+                val file = Multimedia (
+                    arguments?.getString("id")!!.toInt(),
+                    "photo",
+                    photoURI.toString(),
+                    binding.description.text.toString()
+                )
+                //Insert
+                NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().insert(file)
 
-            binding.savePhoto.visibility = View.INVISIBLE
-            binding.takePhoto.visibility = View.INVISIBLE
-            binding.description.isEnabled = false
+                binding.savePhoto.visibility = View.INVISIBLE
+                binding.takePhoto.visibility = View.INVISIBLE
+                binding.addfoto.visibility= View.INVISIBLE
+                binding.description.isEnabled = false
+            }else{
+                Toast.makeText(context, "Primero debes tomar o adjuntar una foto", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         return binding.root
     }
+
+
 
     private lateinit var currentPhotoPath: String
     @Throws(IOException::class)

@@ -136,8 +136,8 @@ class FGAgregarTarea : Fragment(R.layout.fg_agregar_tarea) {
         val tareaTitle = binding.etTareaTitle.text.toString().trim()
         val tareaSubTitle = binding.etTareaSubTitle.text.toString().trim()
         val tareatvDate = binding.tvDateTarea.text.toString().trim()
-        val tareaBody = binding.etTareaBody.text.toString().trim()
-
+     //   val tareaBody = binding.etTareaBody.text.toString().trim()
+        val tareaBody = "aaaaaaaaaaa"
         if (tareaTitle.isNotEmpty()) {
             val tarea = Tarea(0, tareaTitle, tareaSubTitle, tareatvDate, tareaBody)
             scheduleNotificaction(tareaTitle)
