@@ -9,23 +9,14 @@
     tools:context=".fragmentos.ViewMultimediaFragment">
 
 
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="414dp"
-        android:layout_height="631dp"
-        android:layout_marginBottom="98dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listMultimedia"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20sp"
-            android:orientation="vertical" />
-    </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="200dp"
+        android:id="@+id/listMultimedia"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,11 +72,11 @@ class FGAgregarTarea : Fragment(R.layout.fg_agregar_tarea) {
         binding.tvDateTarea.text = currentDate
 
         //Date and hour
-        binding.date.setOnClickListener {
+        binding.txtDate.setOnClickListener {
             showDatePickerDialog()
         }
 
-        binding.hour.setOnClickListener {
+        binding.txtHour.setOnClickListener {
             showTimePikerDialog()
         }
 
@@ -137,8 +137,8 @@ class FGAgregarTarea : Fragment(R.layout.fg_agregar_tarea) {
         val tareaTitle = binding.etTareaTitle.text.toString().trim()
         val tareaSubTitle = binding.etTareaSubTitle.text.toString().trim()
         val tareatvDate = binding.tvDateTarea.text.toString().trim()
-     //   val tareaBody = binding.etTareaBody.text.toString().trim()
-        val tareaBody = "aaaaaaaaaaa"
+        val tareaBody = binding.etNoteBody.text.toString().trim()
+
         if (tareaTitle.isNotEmpty()) {
             val tarea = Tarea(0, tareaTitle, tareaSubTitle, tareatvDate, tareaBody)
             scheduleNotificaction(tareaTitle)

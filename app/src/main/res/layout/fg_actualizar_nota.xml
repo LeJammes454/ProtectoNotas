@@ -41,19 +41,37 @@
                     android:orientation="vertical"
                     android:background="@drawable/bordecard"
                     android:padding="16dp">
-
-                    <EditText
-                        android:id="@+id/etNoteTitleUpdate"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:ems="10"
-                        android:hint="Titulo Nota"
-                        android:inputType="text"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/etNoteTitleUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:ems="8"
+                            android:hint="Titulo Tarea"
+                            android:inputType="text"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvNoteDateUpdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:clickable="false"
+                            android:cursorVisible="false"
+                            android:ellipsize="end"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:maxLines="1"
+                            android:textColor="@color/darkGray" />
+
+                    </LinearLayout>
 
                     <EditText
                         android:id="@+id/etNoteSubTitleUpdate"
@@ -83,21 +101,6 @@
                         android:textColor="@color/black"
                         android:textColorHint="@color/hintColor"
                         android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tvNoteDateUpdate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:ellipsize="end"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"
-                        android:maxLines="1"
-                        android:textColor="@color/darkGray"
-                        android:layout_marginTop="10dp"/>
-
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

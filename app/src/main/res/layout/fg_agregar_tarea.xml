@@ -50,10 +50,10 @@
                         android:orientation="horizontal">
                         <EditText
                             android:id="@+id/etTareaTitle"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
-                            android:ems="10"
+                            android:ems="8"
                             android:hint="Titulo Tarea"
                             android:inputType="text"
                             android:textColor="@color/black"
@@ -90,50 +90,43 @@
                         android:textColorHint="@color/darkGray"
                         android:textSize="15sp"
                         android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/etNoteBody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Descripción"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/btnPress"
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <Button
-                            android:id="@+id/date"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="6dp"
-                            android:layout_marginEnd="2dp"
-                            android:text="Fecha"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
                         <EditText
                             android:id="@+id/txtDate"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="false"
-                            android:ems="8"
+                            android:hint="@string/fechadesc"
                             android:focusable="false"
                             android:importantForAutofill="no"
                             android:inputType="date"
                             android:minHeight="48dp"
                             tools:ignore="SpeakableTextPresentCheck" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <Button
-                            android:id="@+id/hour"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginTop="6dp"
-                            android:layout_marginEnd="2dp"
-                            android:text="Hora" />
 
                         <EditText
                             android:id="@+id/txtHour"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="false"
-                            android:ems="8"
+                            android:hint="@string/horadesc"
                             android:focusable="false"
                             android:importantForAutofill="no"
                             android:inputType="date"

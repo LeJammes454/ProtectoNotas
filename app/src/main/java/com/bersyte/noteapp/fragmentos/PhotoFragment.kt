@@ -69,6 +69,8 @@ class PhotoFragment : Fragment() {
                 binding.takePhoto.visibility = View.INVISIBLE
                 binding.addfoto.visibility= View.INVISIBLE
                 binding.description.isEnabled = false
+
+                Toast.makeText(context, "Se guardo cojn exito la foto", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(context, "Primero debes tomar o adjuntar una foto", Toast.LENGTH_SHORT).show()
             }

@@ -52,4 +52,8 @@
     <string name="NoniExp">Notas</string>
     <string name="Desc">Deverias revisar mas seguido las tareas 😉</string>
     <string name="TareaP">Tarea pendiente 📕</string>
+
+    <string name="fechadesc">Selecciona la fecha</string>
+    <string name="horadesc">Selecciona la hora</string>
+
 </resources>

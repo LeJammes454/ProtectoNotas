@@ -1,6 +1,7 @@
 package com.bersyte.noteapp.fragmentos
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,8 @@ class ViewMultimediaFragment : Fragment() {
 
         lifecycleScope.launch {
             val id =  arguments?.getString("id")!!.toInt()
-            multimedia = NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().getMultimedia(id)
+
+            multimedia = NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().getMultimedia(id+1)
         }
 
         rv.adapter = MultimediaAdapter(multimedia)

@@ -61,11 +61,11 @@ class FGActualizarTareas : Fragment(R.layout.fg_actualizar_tarea) {
         fecha = binding.txtDate
         hora = binding.txtHour
         //Date and hour
-        binding.date.setOnClickListener {
+        binding.txtDate.setOnClickListener {
             showDatePickerDialog()
         }
 
-        binding.hour.setOnClickListener {
+        binding.txtHour.setOnClickListener {
             showTimePikerDialog()
         }
         return binding.root

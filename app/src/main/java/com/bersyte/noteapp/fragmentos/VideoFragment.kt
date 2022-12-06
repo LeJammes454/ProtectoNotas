@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.MediaController
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -37,7 +38,7 @@ class VideoFragment : Fragment() {
         super.onAttach(context)
         miContext = context
     }
-
+    var seguardo = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,22 +46,32 @@ class VideoFragment : Fragment() {
         binding = FragmentVideoBinding.inflate(layoutInflater)
 
         binding.takeVideo.setOnClickListener {
+            seguardo=true
             validarPermisos()
+
         }
 
         binding.saveVideo.setOnClickListener {
-            val file = Multimedia (
-                arguments?.getString("id")!!.toInt(),
-                "video",
-                videoURI.toString(),
-                binding.description.text.toString()
-            )
-            //Insert
-            NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().insert(file)
 
-            binding.saveVideo.visibility = View.INVISIBLE
-            binding.takeVideo.visibility = View.INVISIBLE
-            binding.description.isEnabled = false
+            if (seguardo!=false){
+                val file = Multimedia (
+                    arguments?.getString("id")!!.toInt(),
+                    "video",
+                    videoURI.toString(),
+                    binding.description.text.toString()
+                )
+                //Insert
+                NoteDatabase.getInstance(requireActivity().applicationContext).MultimediaDao().insert(file)
+
+                binding.saveVideo.visibility = View.INVISIBLE
+                binding.takeVideo.visibility = View.INVISIBLE
+                binding.description.isEnabled = false
+
+                Toast.makeText(context, "El video se a guardado con exito", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context, "Debes grabar un video antes de guardar", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         mediaController = MediaController(miContext)
