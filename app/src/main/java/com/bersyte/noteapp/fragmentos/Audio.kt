@@ -79,6 +79,7 @@ class Audio : Fragment(){
            binding.btnStart.visibility = View.INVISIBLE
            binding.btnStop.visibility = View.INVISIBLE
            binding.btnGuardar.visibility = View.INVISIBLE
+           binding.btnplay.visibility=  View.INVISIBLE
            binding.txtDescripcionNota.isEnabled = false
        }
         return binding.root
